@@ -1,8 +1,27 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    String testVar = "Im a Variable";
+
+    List<string> pokemons = ["pikachu", "charizard", "eevee", "bulbasaur", "lucario", "lapras", "mew"];
+    int i = 0;
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+<div>
+    <p>Hello World @testVar</p>
+</div>
+
+
+@foreach (string pokemon in pokemons){
+    String tempFile = "images/" + pokemon + ".png";
+    <div>
+        <p>Pokemon @i: @pokemon</p>
+        <img src=@tempFile alt="A picture of @pokemon"/>
+    </div>
+
+    i += 1;
+}

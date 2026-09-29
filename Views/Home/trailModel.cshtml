@@ -1,0 +1,40 @@
+﻿@*
+*@
+@{
+    @model IEnumerable<Trail>
+}
+
+<div class="text-center">
+    <h1 class="display-4">This is Testing loading a model</h1>
+</div>
+
+<div>TESTING</div>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Length (km)</th>
+            <th>Elevation Gain (m)</th>
+            <th>Location</th>
+            <th>Created</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var trail in Model)
+        {
+            <tr>
+                <td>@trail.Id</td>
+                <td>@trail.Title</td>
+                <td>@trail.Description</td>
+                <td>@trail.Length</td>
+                <td>@trail.ElevationGain</td>
+                <td>@trail.Location</td>
+                <td>@trail.CreatedDate.ToString("MMM d, yyyy")</td>
+            </tr>
+        }
+    </tbody>
+</table>

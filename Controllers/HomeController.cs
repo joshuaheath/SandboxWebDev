@@ -28,7 +28,7 @@ namespace SandboxWebDev.Controllers
             return Content("Hello, This is a plain text from the ContentResult Action Method");
         }
 
-        public ActionResult testTwo()
+        public ActionResult pokemon()
         {
             return View();
         }
@@ -65,6 +65,42 @@ namespace SandboxWebDev.Controllers
                 totalAmount = 69.97
             };
             return Json(data);
+        }
+
+        //Challnge 3
+        public ActionResult trailModel()
+        {
+            Models.Trail trailOne = new Trail();
+            trailOne.Id = 1;
+            trailOne.Title = "Joe";
+            trailOne.Length = 0;
+            trailOne.Location = "TimbuckTwo";
+            trailOne.Description = "TESTING";
+            trailOne.ElevationGain = 100;
+            trailOne.CreatedDate = DateTime.Now;
+
+            Models.Trail trailTwo = new Trail();
+            trailTwo.Id = 2;
+            trailTwo.Title = "Micheal";
+            trailTwo.Length = 806;
+            trailTwo.Location = "California";
+            trailTwo.Description = "Another description that i have no clue what to type";
+            trailTwo.ElevationGain = 4546;
+            trailTwo.CreatedDate = DateTime.Now;
+
+            Models.Trail trailThree = new Trail();
+            trailThree.Id = 3;
+            trailThree.Title = "Ben";
+            trailThree.Length = 500;
+            trailThree.Location = "Calgary";
+            trailThree.Description = "I dont know what to type here but it is a description";
+            trailThree.ElevationGain = 405;
+            trailThree.CreatedDate = DateTime.Now;
+
+            List<Trail> trailList = new List<Trail>{ trailOne, trailTwo, trailThree };
+            
+
+            return View(trailList);
         }
     }
 }

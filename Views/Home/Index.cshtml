@@ -1,9 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
     String testVar = "Im a Variable";
-
-    List<string> pokemons = ["pikachu", "charizard", "eevee", "bulbasaur", "lucario", "lapras", "mew"];
-    int i = 0;
 }
 
 <div class="text-center">
@@ -12,16 +9,9 @@
 </div>
 
 <div>
-    <p>Hello World @testVar</p>
+    <p>
+       Hello World
+       Variable test @testVar
+    </p>
 </div>
 
-
-@foreach (string pokemon in pokemons){
-    String tempFile = "images/" + pokemon + ".png";
-    <div class="text-center">
-        <p>Pokemon @i: @pokemon</p>
-        <img src=@tempFile alt="A picture of @pokemon"/>
-    </div>
-
-    i += 1;
-}

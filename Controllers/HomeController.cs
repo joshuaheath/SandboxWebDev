@@ -33,7 +33,7 @@ namespace SandboxWebDev.Controllers
             return View();
         }
 
-        public ViewResult test3(string message = "Test 3") //Needs a view
+        public ActionResult Create() //Needs a view
         {
             return View();
         }

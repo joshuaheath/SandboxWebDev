@@ -1,4 +1,8 @@
+using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("SandboxWebDevContext") ?? throw new InvalidOperationException("Connection string 'SandboxWebDevContext' not found.");
+
+builder.Services.AddDbContext<SandboxWebDevContext>(options => options.UseSqlServer(connectionString));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
